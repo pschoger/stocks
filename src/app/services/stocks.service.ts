@@ -19,13 +19,13 @@ export class StocksService {
       new Stock("Stock_2", "The second one",
         new Map<Date, number>()
         .set(new Date('2019'), 7)
-        .set(new Date('2019'), 20)
-        .set(new Date('2020'), 10)),
+        .set(new Date('2020'), 20)
+        .set(new Date('2021'), 10)),
       new Stock("Stock_3", "Third stock",
         new Map<Date, number>()
         .set(new Date('2019'), 18)
-        .set(new Date('2019'), 5)
-        .set(new Date('2020'), 2))
+        .set(new Date('2020'), 5)
+        .set(new Date('2021'), 2))
     ]
   }
 }
