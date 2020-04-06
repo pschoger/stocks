@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { StocksService } from '../services/stocks.service';
+import { Router } from '@angular/router';
+import { Stock } from '../Model/Stock';
+import { CellDoubleClickedEvent, Column } from 'ag-grid-community';
 
 @Component({
   selector: 'stock-presenter',
@@ -8,24 +11,34 @@ import { StocksService } from '../services/stocks.service';
 })
 export class StockPresenterComponent implements OnInit {
 
-  constructor(private service: StocksService) { 
-    console.log(this.service.getStocks())
+  constructor(private service: StocksService, private router: Router) { 
+    // this.service.getStocks().forEach(s => console.log(s.Price.get(this.year )))
+    this.service.getStocks().forEach(s =>
+      this.rowData.push({
+        stockname: s.Name,
+        description: s.Description,
+        price: s.Price.get(this.year)
+      })
+    )
   }
 
   ngOnInit() {
   }
 
   columnDefs = [
-    {headerName: 'Make', field: 'make' },
-    {headerName: 'Model', field: 'model' },
+    {headerName: 'Stockname', field: 'stockname' },
+    {headerName: 'Description', field: 'description' },
     {headerName: 'Price', field: 'price'}
-];
+  ];
 
-rowData = [
-    { make: 'Toyota', model: 'Celica', price: 35000 },
-    { make: 'Ford', model: 'Mondeo', price: 32000 },
-    { make: 'Porsche', model: 'Boxter', price: 72000 }
-];
+  rowData = [];
 
+  year : number = 2019
 
+  rowdbClick(eventargs: CellDoubleClickedEvent)
+  {
+
+    // console.log(eventargs.data['stockname']);
+    this.router.navigate(['/stocks', eventargs.data['stockname']])
+  }
 }

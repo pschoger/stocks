@@ -3,7 +3,7 @@ export class Stock{
     constructor(
         private name:string,
         private description:string,
-        private price?:Map<Date, number>
+        private price?:Map<number, number>
     ) {}
 
     get Name() {return this.name;}
@@ -13,7 +13,7 @@ export class Stock{
     // set Description(v:string) {this.description = v;}
 
     
-    get Price() : Map<Date, number> {return this.price; }
-    // set Price(v : Map<Date, number>) {this.price = v; }
-    
+    get Price() : Map<number, number> {return this.price; }
+    // set Price(v : Map<number, number>) {this.price = v; }
+ 
 }
