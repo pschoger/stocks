@@ -27,13 +27,13 @@ export class StockPresenterComponent implements OnInit {
 
   columnDefs = [
     {headerName: 'Stockname', field: 'stockname' },
-    {headerName: 'Description', field: 'description' },
-    {headerName: 'Price', field: 'price'}
+    {headerName: 'Description', field: 'description' }
+    // ,{headerName: 'Price', field: 'price'}
   ];
 
   rowData = [];
 
-  year : number = 2019
+  year : number = 2020
 
   rowdbClick(eventargs: CellDoubleClickedEvent)
   {

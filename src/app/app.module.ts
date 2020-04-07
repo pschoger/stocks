@@ -16,6 +16,7 @@ import { PanelModule } from "primeng/panel";
 import { ButtonModule } from 'primeng/button';
 import { RadioButtonModule } from 'primeng/radiobutton';
 import { DialogModule } from "primeng/dialog";
+import { ChartModule } from "primeng/chart";
 
 
 @NgModule({
@@ -34,7 +35,8 @@ import { DialogModule } from "primeng/dialog";
     PanelModule,
     ButtonModule,
     RadioButtonModule,
-    DialogModule
+    DialogModule,
+    ChartModule
   ],
   providers: [StocksService],
   bootstrap: [AppComponent]
