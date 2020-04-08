@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { StocksService } from '../services/stocks.service';
+import { StocksService } from '../../services/stocks.service';
 import { Router } from '@angular/router';
-import { Stock } from '../Model/Stock';
+import { Stock } from '../../Model/Stock';
 import { CellDoubleClickedEvent, Column } from 'ag-grid-community';
 
 @Component({

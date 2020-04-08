@@ -1,7 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { StocksService } from '../services/stocks.service';
+import { StocksService } from '../../services/stocks.service';
 import { ActivatedRoute, Router, RouterEvent } from '@angular/router';
-import { Stock } from '../Model/Stock';
+import { Stock } from '../../Model/Stock';
 import { Subscription } from 'rxjs';
 
 @Component({
