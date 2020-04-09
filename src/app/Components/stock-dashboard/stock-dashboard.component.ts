@@ -39,7 +39,7 @@ export class StockDashboardComponent implements OnInit {
   {
     this.dashboard = []
     this.service.getTopStocks(2022).forEach(stock => {
-      this.dashboard.push({cols: 2, rows: 1, y: 0, x: 0, name: stock.Name})
+      this.dashboard.push({cols: 2, rows: 1.2, y: 0, x: 0, name: stock.Name})
     });
   }
 }

@@ -12,3 +12,36 @@
 .ag-theme-alpine {
     @include ag-theme-alpine();
 }
+
+body{
+    margin: auto;
+    max-width:650px;
+    line-height:1.6;
+    font-size:18px;
+    color:#444;
+    padding:10px;
+    background: #EEEEEE;
+}
+
+h1,h2{
+    line-height:1.2; 
+    text-align: center;
+}
+
+h3{
+    line-height: 1.2;
+    margin: 15px;
+}
+
+
+.moderate-colors{
+    color: #EEEE00; 
+}
+
+ag-grid-angular{
+    width: 440px; height: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 50px;
+}
+

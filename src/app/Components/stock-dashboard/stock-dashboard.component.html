@@ -1,7 +1,7 @@
-<p>Top Stocks</p>
+<h2>Top Stocks</h2>
 <gridster [options]="options">
   <gridster-item [item]="item" *ngFor="let item of dashboard">
-    {{item.name}}
+    <h3>{{item.name}}</h3>
     <graph stockName={{item.name}}></graph>
   </gridster-item>
 </gridster>
