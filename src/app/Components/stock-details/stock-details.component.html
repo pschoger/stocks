@@ -1,10 +1,7 @@
-<p>stock-details works!</p>
-
 <p-dialog header="Stockdetails" [(visible)]="Display" (onHide)="NavigateBack()">
     Name: {{Name}}
     <br>
     Description: {{Description}}
     <br>
-    <p-chart type="line" [data]="data"></p-chart>
-
+    <graph stockName={{Name}}></graph>
 </p-dialog>

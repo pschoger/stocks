@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Stock } from '../Model/Stock';
+import { Stock } from '../../Model/Stock';
 import { analyzeAndValidateNgModules } from '@angular/compiler';
 
 @Injectable({
@@ -36,12 +36,12 @@ export class StocksService {
 
   getStockByName(stockName: string)
   {
-    return this.getStocks().find(s => s.Name == stockName)
+    return this.getStocks().find(s => s.Name === stockName)
   }
 
   public random : boolean = true;
 
-  getRandomStocks(){
+  private getRandomStocks(){
     let stocks : Stock[] = new Array<Stock>()
 
     
@@ -63,5 +63,11 @@ export class StocksService {
     }
     
     return stocks;
+  }
+
+  public getTopStocks(year:number = 2020, number:number = 6): Stock[]
+  {
+    // first slice prevents sorting of original array
+    return this.getStocks().slice(0, this.getStocks().length).sort((a,b)=> b.Price.get(year)-a.Price.get(year)).slice(0,number)
   }
 }

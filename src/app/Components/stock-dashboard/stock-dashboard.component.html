@@ -1,1 +1,7 @@
-<p>stock-dashboard works!</p>
+<p>Top Stocks</p>
+<gridster [options]="options">
+  <gridster-item [item]="item" *ngFor="let item of dashboard">
+    {{item.name}}
+    <graph stockName={{item.name}}></graph>
+  </gridster-item>
+</gridster>

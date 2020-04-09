@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { StocksService } from '../../services/stocks.service';
+import { StocksService } from '../../services/stock/stocks.service';
 import { Router } from '@angular/router';
 import { Stock } from '../../Model/Stock';
 import { CellDoubleClickedEvent, Column } from 'ag-grid-community';
@@ -12,7 +12,6 @@ import { CellDoubleClickedEvent, Column } from 'ag-grid-community';
 export class StockPresenterComponent implements OnInit {
 
   constructor(private service: StocksService, private router: Router) { 
-    // this.service.getStocks().forEach(s => console.log(s.Price.get(this.year )))
     this.service.getStocks().forEach(s =>
       this.rowData.push({
         stockname: s.Name,
@@ -37,8 +36,6 @@ export class StockPresenterComponent implements OnInit {
 
   rowdbClick(eventargs: CellDoubleClickedEvent)
   {
-
-    // console.log(eventargs.data['stockname']);
     this.router.navigate(['/stocks', eventargs.data['stockname']])
   }
 }
