@@ -34,7 +34,7 @@ export class StockDetailsComponent implements OnInit , OnDestroy{
 
   getStockDetails(stockname: string)
   {
-    this.stock = this.servive.getStockByName(stockname);
+    this.stock = this.servive.getStockByName(stockname) as Stock;
   }
 
   NavigateBack(){

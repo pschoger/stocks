@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { Stock } from '../../Model/Stock';
-import { analyzeAndValidateNgModules } from '@angular/compiler';
 
 @Injectable({
   providedIn: 'root'
@@ -34,9 +33,14 @@ export class StocksService {
     }
   }
 
-  getStockByName(stockName: string)
+  getStockByName(stockName: string | string[]) : Stock | Stock[]
   {
-    return this.getStocks().find(s => s.Name === stockName)
+    if (typeof(stockName) === "string") {
+      return this.getStocks().find(s => s.Name === stockName)
+    }
+    else{
+      return this.getStocks().filter(s => stockName.includes(s.Name))
+    }
   }
 
   public random : boolean = true;

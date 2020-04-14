@@ -32,14 +32,16 @@ export class StockDashboardComponent implements OnInit {
       gridType: GridType.VerticalFixed,
       setGridSize: true
     };
-    this.setItems();
+    this.setTopStocks(2022,3);
   }
 
-  setItems()
+  setTopStocks(year:number, number?: number)
   {
     this.dashboard = []
-    this.service.getTopStocks(2022).forEach(stock => {
-      this.dashboard.push({cols: 2, rows: 1.2, y: 0, x: 0, name: stock.Name})
+      let stockNames: string[] = []
+      this.service.getTopStocks(year, number).forEach(stock => {
+        stockNames.push(stock.Name);
     });
+    this.dashboard.push({cols: 2, rows: 1.2, y: 0, x: 0, name: stockNames})
   }
 }
