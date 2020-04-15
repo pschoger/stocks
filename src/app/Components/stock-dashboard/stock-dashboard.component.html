@@ -1,7 +1,15 @@
-<h2>Top Stocks</h2>
 <gridster [options]="options">
   <gridster-item [item]="item" *ngFor="let item of dashboard">
-    <h3>{{item.name}}</h3>
-    <graph stockName={{item.name}}></graph>
+    <div [ngSwitch]="item.type">
+      <!-- Graph -->
+      <div *ngSwitchCase="'graph'">
+        <h2>Top Stocks</h2>
+        <graph stockName={{item.name}}></graph>
+      </div>
+      <!-- Fluctuation -->
+      <div *ngSwitchCase="'fluctuation'">
+        <stock-fluctuation year_1={{item.year_1}} year_2={{item.year_2}}></stock-fluctuation>
+      </div>
+    </div>
   </gridster-item>
 </gridster>

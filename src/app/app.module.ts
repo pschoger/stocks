@@ -15,6 +15,8 @@ import { ChartModule } from "primeng/chart";
 import { GridsterModule } from "angular-gridster2";
 import { StockDashboardComponent } from './components/stock-dashboard/stock-dashboard.component';
 import { GraphComponent } from './components/graph/graph.component';
+import { StockFluctuationComponent } from './components/stock-fluctuation/stock-fluctuation.component';
+import { StockflutuationPipe } from './pipes/stockflutuation.pipe';
 
 
 @NgModule({
@@ -23,7 +25,9 @@ import { GraphComponent } from './components/graph/graph.component';
     StockPresenterComponent,
     StockDetailsComponent,
     StockDashboardComponent,
-    GraphComponent
+    GraphComponent,
+    StockFluctuationComponent,
+    StockflutuationPipe
   ],
   imports: [
     BrowserModule,

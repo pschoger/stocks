@@ -22,11 +22,8 @@ export class GraphComponent implements OnInit{
 
   @Input()
   public set stockName(v){
-    // console.log(v)
     this.getStockDetails(v)
     this.updateChart();
-    // this.getStockDetails(["Stock_1", "Stock_2"])
-    // console.log(this.stockArray)
   }
 
   getStockDetails(stockName: string | string[] )

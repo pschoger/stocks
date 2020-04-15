@@ -1,0 +1,11 @@
+
+<h2>Fluctuation</h2>
+<p><b>From: {{year_1}} To: {{year_2}}</b></p>
+<div *ngFor="let stock of stocks">
+    <div class="">
+        <p>
+            {{stock.name}}: 
+            <b>{{stock.name | stockflutuation :year_1 :year_2}}</b>
+        </p>
+    </div>
+</div>
