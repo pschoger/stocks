@@ -55,7 +55,6 @@ export class GraphComponent implements OnInit{
       }
     }
     if (this.stockArray) {
-      console.log(this.stockArray)
       let datasets = []
       this.stockArray.forEach(s => {
         datasets.push(
@@ -67,7 +66,6 @@ export class GraphComponent implements OnInit{
           }
         )
       });
-      console.log(datasets);
       this.data ={
         labels: Array.from(this.stockArray[0].Price.keys()),
         datasets : datasets

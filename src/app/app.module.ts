@@ -9,6 +9,8 @@ import { StocksService } from './services/stock/stocks.service';
 import { StockDetailsComponent } from './Components/stock-details/stock-details.component'; 
 import { BrowserAnimationsModule  } from "@angular/platform-browser/animations";
 import { FormsModule } from "@angular/forms";
+import { CarouselModule } from "primeng/carousel"
+import { CardModule } from "primeng/card"
 
 import { DialogModule } from "primeng/dialog";
 import { ChartModule } from "primeng/chart";
@@ -17,6 +19,7 @@ import { StockDashboardComponent } from './components/stock-dashboard/stock-dash
 import { GraphComponent } from './components/graph/graph.component';
 import { StockFluctuationComponent } from './components/stock-fluctuation/stock-fluctuation.component';
 import { StockflutuationPipe } from './pipes/stockflutuation.pipe';
+import { NewstickerComponent } from './components/newsticker/newsticker.component';
 
 
 @NgModule({
@@ -27,7 +30,8 @@ import { StockflutuationPipe } from './pipes/stockflutuation.pipe';
     StockDashboardComponent,
     GraphComponent,
     StockFluctuationComponent,
-    StockflutuationPipe
+    StockflutuationPipe,
+    NewstickerComponent
   ],
   imports: [
     BrowserModule,
@@ -37,7 +41,9 @@ import { StockflutuationPipe } from './pipes/stockflutuation.pipe';
     BrowserAnimationsModule,
     DialogModule,
     ChartModule,
-    GridsterModule
+    GridsterModule,
+    CarouselModule,
+    CardModule
   ],
   providers: [StocksService],
   bootstrap: [AppComponent],
